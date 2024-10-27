@@ -1,11 +1,12 @@
 package tn.esprit.tpfoyer.service;
 
 
-import jakarta.transaction.Transactional;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.tpfoyer.entity.Bloc;
 import tn.esprit.tpfoyer.repository.BlocRepository;
 

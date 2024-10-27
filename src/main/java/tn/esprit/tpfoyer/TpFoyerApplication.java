@@ -13,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableScheduling
 @EnableAspectJAutoProxy
 @EnableJpaRepositories("tn.esprit.tpfoyer.repository")
-
 public class TpFoyerApplication {
 
     public static void main(String[] args) {
