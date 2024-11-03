@@ -11,7 +11,12 @@ services:
     image: "youssefkchaou/tp-foyer"  # Nom d'image en minuscule
     depends_on:
       - docker-mysql
-
+  # Service pour l'application Angular
+  frontend:
+    image: youssefkchaou/tpfoyer-front
+    container_name: tpfoyer_frontend
+    ports:
+      - "80:80"
   docker-mysql:
     image: "mysql:5.6"
     environment:
