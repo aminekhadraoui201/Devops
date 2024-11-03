@@ -18,7 +18,7 @@ services:
     image: youssefkchaou/tpfoyer-front
     container_name: tpfoyer_frontend
     ports:
-      - "4222:4222"
+      - "80:80"
     networks:
       - tpfoyer_network
   docker-mysql:
