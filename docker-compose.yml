@@ -11,12 +11,16 @@ services:
     image: "youssefkchaou/tp-foyer"  # Nom d'image en minuscule
     depends_on:
       - docker-mysql
+    networks:
+      - tpfoyer_network
   # Service pour l'application Angular
   frontend:
     image: youssefkchaou/tpfoyer-front
     container_name: tpfoyer_frontend
     ports:
       - "4222:4222"
+    networks:
+      - tpfoyer_network
   docker-mysql:
     image: "mysql:5.6"
     environment:
@@ -25,4 +29,14 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
       - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - tpfoyer_network
+# Déclaration du réseau
+networks:
+  tpfoyer_network:
 
+# Volume pour persister les données de MySQL
+volumes:
+  mysql_data:
